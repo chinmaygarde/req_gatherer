@@ -1,0 +1,27 @@
+<h1>Listing requirements</h1>
+
+<% if @requirements.length == 0 %>
+	<h3>You have not gathered any requirements</h3>
+<% else %>
+	<table>
+	  <tr>
+	    <th>Title</th>
+	    <th>Priority</th>
+	    <th>Status</th>
+	    <th colspan="3">Operations</th>
+	  </tr>
+
+	<% @requirements.each do |requirement| %>
+	  <tr>
+	    <td><%= requirement.title %></td>
+	    <td><%= requirement.priority.title %></td>
+	    <td><%= requirement.status.title %></td>
+	    <td><%= link_to 'Show', requirement %></td>
+	    <td><%= link_to 'Edit', edit_requirement_path(requirement) %></td>
+	    <td><%= link_to 'Destroy', requirement, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+<% end %>
+<br />
+<%= link_to 'New Requirement', new_requirement_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  preconditions: MyText
+  postconditions: MyText
+  steps_to_use_case: MyText
+  special_cases: MyText
+  potential_issues: MyText
+
+two:
+  title: MyString
+  description: MyText
+  preconditions: MyText
+  postconditions: MyText
+  steps_to_use_case: MyText
+  special_cases: MyText
+  potential_issues: MyText

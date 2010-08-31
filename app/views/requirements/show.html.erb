@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Status:</b><br />
+  <%= @requirement.status.title %>
+</p>
+
+
+<p>
+  <b>Title:</b><br />
+  <%= @requirement.title %>
+</p>
+
+<p>
+  <b>Priority:</b><br />
+  <%= @requirement.priority.title if @requirement.priority %>
+</p>
+
+
+<p>
+  <b>Description:</b><br />
+  <%= @requirement.description %>
+</p>
+
+<p>
+  <b>Preconditions:</b><br />
+  <%= @requirement.preconditions %>
+</p>
+
+<p>
+  <b>Postconditions:</b><br />
+  <%= @requirement.postconditions %>
+</p>
+
+<p>
+  <b>Auth Level:</b><br />
+  <%= @requirement.auth_level.title if @requirement.auth_level %>
+</p>
+
+<p>
+  <b>Steps to use case:</b><br />
+  <%= @requirement.steps_to_use_case %>
+</p>
+
+<p>
+  <b>Special cases:</b><br />
+  <%= @requirement.special_cases %>
+</p>
+
+<p>
+  <b>Potential issues:</b><br />
+  <%= @requirement.potential_issues %>
+</p>
+
+
+<%= link_to 'Edit', edit_requirement_path(@requirement) %> |
+<%= link_to 'Back', requirements_path %>

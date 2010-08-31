@@ -1,0 +1,57 @@
+<%= form_for(@requirement) do |f| %>
+  <% if @requirement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@requirement.errors.count, "error") %> prohibited this requirement from being saved:</h2>
+
+      <ul>
+      <% @requirement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :status %><br />
+    <%= select(:requirement, :status_id, Status.all.collect { |s| [ s.title, s.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :priority %><br />
+    <%= select(:requirement, :priority_id, Priority.all.collect { |p| [ p.title, p.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :preconditions %><br />
+    <%= f.text_area :preconditions %>
+  </div>
+  <div class="field">
+    <%= f.label :auth_level %><br />
+    <%= select(:requirement, :auth_level_id, AuthLevel.all.collect { |p| [ p.title, p.id ] }) %>
+  </div>
+  <div class="field">
+    <%= f.label :postconditions %><br />
+    <%= f.text_area :postconditions %>
+  </div>
+  <div class="field">
+    <%= f.label :steps_to_use_case %><br />
+    <%= f.text_area :steps_to_use_case %>
+  </div>
+  <div class="field">
+    <%= f.label :special_cases %><br />
+    <%= f.text_area :special_cases %>
+  </div>
+  <div class="field">
+    <%= f.label :potential_issues %><br />
+    <%= f.text_area :potential_issues %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

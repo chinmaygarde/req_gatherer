@@ -1,0 +1,23 @@
+<h1>Listing auth_levels</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @auth_levels.each do |auth_level| %>
+  <tr>
+    <td><%= auth_level.title %></td>
+    <td><%= link_to 'Show', auth_level %></td>
+    <td><%= link_to 'Edit', edit_auth_level_path(auth_level) %></td>
+    <td><%= link_to 'Destroy', auth_level, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Auth level', new_auth_level_path %>
